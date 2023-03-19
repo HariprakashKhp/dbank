@@ -1,7 +1,9 @@
 export const idlFactory = ({ IDL }) => {
   return IDL.Service({
-    'topUP' : IDL.Func([IDL.Nat], [], ['oneway']),
-    'withdraw' : IDL.Func([IDL.Nat], [], ['oneway']),
+    'checkBalance' : IDL.Func([], [IDL.Float64], ['query']),
+    'compound' : IDL.Func([], [], ['oneway']),
+    'topUP' : IDL.Func([IDL.Float64], [], ['oneway']),
+    'withdraw' : IDL.Func([IDL.Float64], [], ['oneway']),
   });
 };
 export const init = ({ IDL }) => { return []; };
